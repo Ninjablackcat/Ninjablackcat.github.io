@@ -75,11 +75,19 @@ sub.shiftSub{
 
 #title {
     background-color: rgba(38, 128, 0, 1);
-    width: 100%;
+    
     padding: 10px 2%;
 }
 
 #primeContent{
     /*Filler*/
     padding: 0px 2%;
+}
+
+/* Embedded PDF*/
+
+embed.pdf {
+    width:80%;
+    max-width: 1800px;
+    height: 900px;
 }
