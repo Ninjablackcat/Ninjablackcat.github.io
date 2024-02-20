@@ -5,21 +5,29 @@ body {
     background-color: rgba(0, 0, 0, 1);
 }
 
-h1 {
+
+/* Text Style */
+h1, h2, h3, h4, h5, h6, p, sub, sup, em, i, b, small, strong, ins, del, mark{
     color: rgba(255, 255, 255, 1);
 }
 
-h2 {
-    color: rgba(255, 255, 255, 1);
+h1.subBelow {
+    display: inline-block;
 }
 
-p {
-    color: rgba(255, 255, 255, 1);
+sub.shiftSub{
+    
+    position: relative;
+    display: inline;
+    left: -193px;
+    bottom: -15px
+    
 }
 
 /*Navigation bar*/
 
 #navBar {
+    z-index: 10; /* Ensure that other elements are not above this!*/
     overflow: hidden;
     padding-top: 0px;
     padding-bottom: 0px;
@@ -65,6 +73,13 @@ p {
 
 /* Body layout */
 
-#primeContent {
-    margin-left: 2%;
+#title {
+    background-color: rgba(38, 128, 0, 1);
+    width: 100%;
+    padding: 10px 2%;
+}
+
+#primeContent{
+    /*Filler*/
+    padding: 0px 2%;
 }
