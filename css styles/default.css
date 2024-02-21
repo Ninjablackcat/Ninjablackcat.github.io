@@ -84,10 +84,18 @@ sub.shiftSub{
     padding: 0px 2%;
 }
 
-/* Embedded PDF*/
+/* Embedded PDF */
 
 embed.pdf {
     width:80%;
     max-width: 1800px;
     height: 900px;
+}
+
+/* Images */
+
+img {
+    max-width: 100%;
+
+    height: auto;
 }
