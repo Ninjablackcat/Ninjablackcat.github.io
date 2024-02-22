@@ -34,8 +34,8 @@ sub.shiftSub{
 #navBar {
     z-index: 10; /* Ensure that other elements are not above this!*/
     overflow: hidden;
-    padding-top: 0px;
-    margin-top: 10px;
+    padding-top: 5px;
+    margin-top: 0px;
     padding-bottom: 0px;
     position: sticky;
     top: 0;
