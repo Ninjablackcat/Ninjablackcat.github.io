@@ -7,8 +7,13 @@ body {
 
 
 /* Text Style */
-h1, h2, h3, h4, h5, h6, p, sub, sup, em, i, b, small, strong, ins, del, mark, pre{
+h1, h2, h3, h4, h5, h6, p, sub, sup, em, i, b, small, strong, ins, del, mark, pre, a{
     color: rgba(255, 255, 255, 1);
+    font-family:monospace;
+}
+
+p, em, i, b, strong, ins, del, mark, pre, a {
+    font-size:16px;
 }
 
 h1.subBelow {
@@ -19,7 +24,7 @@ sub.shiftSub{
     
     position: relative;
     display: inline;
-    left: -193px;
+    left: -176px;
     bottom: -15px
     
 }
@@ -30,6 +35,7 @@ sub.shiftSub{
     z-index: 10; /* Ensure that other elements are not above this!*/
     overflow: hidden;
     padding-top: 0px;
+    margin-top: 10px;
     padding-bottom: 0px;
     position: sticky;
     top: 0;
@@ -38,10 +44,13 @@ sub.shiftSub{
 
 #navBar a {
     /*Would do format of 'padding: 15px, 20px' but not working...*/
-    padding-top: 15px;
-    padding-bottom: 15px;
+    margin-top:10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     padding-left: 20px;
     padding-right:20px;
+    
+    border-radius:10px 10px 0 0;
 
     display: inline-block;
     background-color: rgba(128, 128, 128, 1);
@@ -53,6 +62,12 @@ sub.shiftSub{
 #navBar a:hover {
     color: rgba(196, 196, 196, 1);
     background-color: rgba(96, 96, 96, 1);
+    margin-top:0px;
+    padding-bottom:20px;
+    position:relative;
+    display:inline;
+    top:-10px;
+    
 }
 
 #navBar a.active {
