@@ -7,7 +7,7 @@ body {
 
 
 /* Text Style */
-h1, h2, h3, h4, h5, h6, p, sub, sup, em, i, b, small, strong, ins, del, mark{
+h1, h2, h3, h4, h5, h6, p, sub, sup, em, i, b, small, strong, ins, del, mark, pre{
     color: rgba(255, 255, 255, 1);
 }
 
