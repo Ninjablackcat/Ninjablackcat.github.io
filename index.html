@@ -29,21 +29,119 @@
             <a href="achievements.html">Achievements</a>
             <a href="about.html">About</a>
             <a href="contacts.html">Contacts</a>
+            <a href="svgCanvasTest.html">SVG Text Rain</a>
         </div>
 
 
         <!-- Contents -->
         <div id="title">
-            <h1>Home Page</h1>
+            <div class="edgeSpacer">
+                <h1>Home Page</h1>
+            </div>
         </div>
 
         <div id="primeContent">
-            <P>Hello visitor, this website is still in development, but is being actively updated to be filled in with my various work.
-            <br>How active? Well it was last updated on Feburary 23rd, 2024... I should probably have this sort of info updated based on the last git commit but manual will have to do for now.
-            <br>Most of the other tabs have bits and pieces of my work in them already, and just need some additional text for context.
-            </p>
-            
+            <div class="edgeSpacer">
+                <P>
+                    Hello visitor, this website is still in development, but is being actively updated to be filled in with my various work.
+                    <br>How active? Well it was last updated on Feburary 23rd, 2024... I should probably have this sort of info updated based on the last git commit but manual will have to do for now.
+                    <br>Most of the other tabs have bits and pieces of my work in them already, and just need some additional text for context.
+                </P>
+            </div>
         </div>
+
+        <script>
+            //Credit: https://github.com/Rudxain/RGB-digital-rain?tab=readme-ov-file for inspiration,
+            //Credit: https://codepen.io/gnsp/pen/vYBQZJm for general method of implementation
+
+            var body = document.body,
+                html = document.documentElement; // Credit: https://stackoverflow.com/questions/1145850/how-to-get-height-of-entire-document-with-javascript for fixing size of svg
+            //Math.max(body.scrollWidth, body.offsetWidth, html.clientWidth, html.scrollWidth, html.offsetWidth);
+            //Get webpage size
+            var pageWidth = Math.max(body.scrollWidth, body.offsetWidth, html.clientWidth, html.scrollWidth, html.offsetWidth);
+            var pageHeight = html.clientHeight; //Is in absolute position, so just need the screen height.
+
+            //console.log(body.scrollHeight);
+            //console.log(body.offsetHeight)
+            //console.log(html.clientHeight)
+            //console.log(html.scrollHeight)
+            //console.log(html.offsetHeight)
+
+            //Parameters
+            var columnWidth = 20;
+            var fontSize = 16;
+            var updateTimeMS = 200;
+            var fallSpeed = fontSize;
+
+            var columnCount = Math.floor(pageWidth / columnWidth) + 2; //Ensure at least two text columns...
+            var columnArray = Array(columnCount);
+
+            //Create svg canvas
+            var svgTextRain = document.createElementNS("http://www.w3.org/2000/svg", "svg",);
+            svgTextRain.classList.add("textRain") //Set to use external css
+
+            svgTextRain.setAttribute('width', pageWidth);
+            svgTextRain.setAttribute('height', pageHeight);
+            var svgTextRainNS = svgTextRain.namespaceURI;
+
+            //Black background
+            var rect = document.createElementNS(svgTextRainNS, 'rect');
+            rect.setAttribute('x', 0);
+            rect.setAttribute('y', 0);
+            rect.setAttribute('width', pageWidth);
+            rect.setAttribute('height', pageHeight);
+            rect.setAttribute('fill', '#000000');
+
+            svgTextRain.appendChild(rect);
+            document.body.appendChild(svgTextRain);
+
+
+
+            //Initialise the text elements
+            var index = 0
+
+            for (index; index < columnCount; index++) {
+                //Create object
+                columnArray[index] = document.createElementNS(svgTextRainNS, 'text');
+                //Assign object parameters
+                //Initial Position
+                columnArray[index].setAttribute('x', (columnWidth * index) + columnWidth / 8);
+                columnArray[index].setAttribute('y', Math.floor(Math.random() * -pageHeight * 2));
+                //Font details
+                columnArray[index].setAttribute('fill', '#ffffff');
+                //columnArray[index].setAttribute('stroke', '#ffffff'); //Makes them bold
+                columnArray[index].setAttribute('font-size', fontSize.toString());
+                //Contents - randomised
+                columnArray[index].textContent = String.fromCharCode(Math.floor(Math.random() * 93) + 1);
+            }
+
+            //Update text characters
+            function updateTextRain() {
+                var index = 0
+
+                //Update text
+                for (index; index < columnCount; index++) {
+                    //Update y position
+                    columnArray[index].setAttribute('y', columnArray[index].getAttribute('y') * 1 + fallSpeed);
+                    //Return to top of screen
+                    if ((columnArray[index].getAttribute('y') * 1 > (pageHeight * 5) / 6 && Math.random() > 0.9) || columnArray[index].getAttribute('y') * 1 > pageHeight) {
+                        columnArray[index].setAttribute('y', Math.floor(Math.random() * -pageHeight));
+                    }
+
+                    //console.log(columnArray[index].getAttribute('y'));
+                    //Update character
+                    columnArray[index].textContent = String.fromCharCode(Math.floor(Math.random() * 93) + 1);
+                    //Put onto canvas
+                    svgTextRain.appendChild(columnArray[index]);
+                }
+                //Update svg canvas with new text
+                document.body.appendChild(svgTextRain);
+            }
+
+            //How often the rain will update (ms)
+            setInterval(updateTextRain, updateTimeMS);
+
+        </script>
 
     </body>
 </html>

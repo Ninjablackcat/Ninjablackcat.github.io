@@ -7,94 +7,32 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <!-- Webpage title -->
-        <title>NBC's Website | University Projects</title>
+        <title>NBC's Website | Contacts</title>
         <!-- Favicon -->
         <link rel="shortcut icon" href="webpage images/favicon16.ico" sizes="16x16" type="image/x-icon">
 
         <link rel="icon" href="webpage images/favicon16.ico" sizes="16x16" type="image/x-icon">
-
     </head>
     <body>
 
         <!-- Navigation to other pages -->
         <div id="navBar">
             <a href="index.html" class="leftmost">Home</a>
-            <a href="university projects.html" class="active">University Projects</a>
+            <a href="university projects.html">University Projects</a>
             <a href="personal projects.html">Personal Projects</a>
             <a href="achievements.html">Achievements</a>
             <a href="about.html">About</a>
             <a href="contacts.html">Contacts</a>
-            <a href="svgCanvasTest.html">SVG Text Rain</a>
+            <a href="svgCanvasTest.html" class="active">SVG Text Rain</a>
         </div>
 
 
         <!-- Contents -->
         <div id="title">
-            <div class="edgeSpacer">
-                <h1>Projects</h1>
-            </div>
+            <h1>SVG - Text Rain</h1>
         </div>
 
-        <div id="primeContent">
-            <div class="edgeSpacer">
-                <div class="project">
-                    <h2>PLC Elevator</h2>
-                    <p>
-                        Goal of this project was to get model PLC controlled elevators to operate similarly to real elevators.<br>
-                        This included accounting for the demand on each floor to try minimise the wait time for users.
-                    </p>
-                    <p>Below are snippets of the code used.</p>
-                    <img src="webpage images/university projects/PLC Elevator Ladder Logic Example.png" alt="Example of Ladder logic code for indicating elevator direction.">
-                    <img src="webpage images/university projects/PLC Elevator Section List.png" alt="List of sections for elevator code.">
-
-                </div>
-
-                <div class="project">
-                    <h2>Robocup</h2>
-                    <p>
-                        My primary objective for the robot was developing the navigation method for the robot. The robot would navigate around an arena with walls as obstacles, and metal weights as "points" to be collected.
-                        <br>An ultrasonic sensor array was used to collect the data, as they had sufficient range to see obstacles ahead, and were more accurate than the IR sensors available - which had even longer range.
-                        <br>At the time I was intending to essentually build a map of the arena while collecting data points. Thus observing to the other side of the arena would be redundant, especially with the opponents robot also in the arena.
-                        <br>
-                    </p>
-                    <img src="webpage images/university projects/Robocup sensor array.jpg" alt="Ultrasonic sensor array, rotated by servos." width="800">
-                    <br>
-                    <br>
-                    <p>
-                        One main challenge was that the supplied code for the ultrasonic sensors was "blocking" - that is, the microcontroller could not do any tasks until the ultrasonic sensor would return a response.
-                        <br>Given that the sensors had a maximum range of 4m - resulting in a total travel distance of 8 meters for the signal - each measurement could take up to 23ms.
-                        <br>While most of the obstacles are fairly large, one could do significantly larger changes in angle with the servos when rotating the sensor arrays.
-
-                        <br>I was not aware of any methods such as a grid map at the time, so I was limiting the amount of data points collected to 2000.
-                        <br>Then using a circular buffer to overwrite old data points. This ensured that the amount of time to process the data for the robot's direction of travel would not impact it's performance.
-
-                    </p>
-                    <p>
-                        Visualised in Processing, as Arduino didn't have a method to plot x,y data. This required using serial communication from the microcontroller to the desktop.
-                        <br>Method for detecting weights was based on comparing a group of points collected by the bottom-most sensor.
-                        <br>If the points collected were consistent for the appearance of a weight, then it would be indicated by a yellow square.
-                        <br>Obstacles were detected based on both sensors measuring the same output, and indicated by a red dot.
-                        <br>Robot forward direction indicated by the blue line from the white dot.
-                    </p>
-                    <img src="webpage images/university projects/Robocup visualising data with robot direction.jpg" alt="Plot of data indicating obstacles (red) and targets (yellow) and robot (white/blue)." width="400">
-                </div>
-
-                <div class="project">
-                    <h2>Wacky Races</h2>
-                    <p>This required the use of data sheets to determine which components were required...</p>
-                    <embed class="pdf" src="webpage images/university projects/PCB Schematic.pdf#view=FitH" alt="Schematic for PCB.">
-                    <br>
-                    <br>
-                    <p>This was then...</p>
-                    <img src="webpage images/university projects/PCB Layout - partway.png" alt="Sample of some of the PCB construction.">
-                    <br>
-                    <br>
-                    <p>The final PCB which was then produced was...</p>
-                    <img src="webpage images/university projects/Final Racer PCB.png" alt="Final Racer PCB.">
-                </div>
-            </div>
-
-        </div>
+    
 
         <script>
             //Credit: https://github.com/Rudxain/RGB-digital-rain?tab=readme-ov-file for inspiration,
@@ -164,7 +102,7 @@
             //Update text characters
             function updateTextRain() {
                 var index = 0
-
+            
                 //Update text
                 for (index; index < columnCount; index++) {
                     //Update y position
@@ -188,6 +126,9 @@
             setInterval(updateTextRain, updateTimeMS);
 
         </script>
+
+
+
 
     </body>
 </html>

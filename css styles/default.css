@@ -91,12 +91,18 @@ sub.shiftSub{
 #title {
     background-color: rgba(38, 128, 0, 1);
     
-    padding: 10px 2%;
+    padding: 10px 12%;
 }
 
 #primeContent{
     /*Filler*/
-    padding: 0px 2%;
+    margin: 0px 12%;
+    background-color: rgba(33, 33, 33, 1);
+    padding: 10px 0px;
+}
+
+div.edgeSpacer{
+    padding: 0px 20px;
 }
 
 /* Embedded PDF */
@@ -113,4 +119,14 @@ img {
     max-width: 100%;
 
     height: auto;
+}
+
+/* svg */
+
+svg.textRain {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -10;
 }
