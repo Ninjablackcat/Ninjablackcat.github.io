@@ -78,6 +78,8 @@
             const trailMSIncrement = timeStepSizeMS;
             const minTrail = 1;
 
+
+            //Initialisation
             const columnCount = Math.floor(pageWidth / columnWidth) + 2; //Ensure at least two text columns...
             var twoDTextRainArray = Array(columnCount);
             var textRainLengthsArray = Array(columnCount); // Keeping track of array lengths for trails.
@@ -138,7 +140,7 @@
                 twoDTextRainArray[index][0].setAttribute('fallUpdateMS', fallUpdateMs);
                 twoDTextRainArray[index][0].setAttribute('idleTimeMS', 0);
 
-                //Generate trail
+                //Generate trails
                 var trailIndex = 1;
                 for (trailIndex; trailIndex < textRainLengthsArray[index]; trailIndex++) {
                     //Generate trail text element
@@ -165,7 +167,11 @@
                 }
             }
             //console.log(twoDTextRainArray);
+            //Put text elements onto canvas
 
+            updateCanvas();
+
+            //Functions
 
             //Iterate through time for leaders.
             function timeStep() {
@@ -217,8 +223,7 @@
                     //Continue to fall
                     twoDTextRainArray[columnIndex][0].setAttribute('y', nextLeaderYPos);
                 }
-                //Update the canvas
-                updateCanvas();
+
 
             }
 
