@@ -81,16 +81,33 @@
 
                 <div class="project">
                     <h2>Wacky Races</h2>
-                    <p>This required the use of data sheets to determine which components were required...</p>
+                    <p>This required the use of data sheets to determine which components required which pins of the microcontroller chip, power, ground ect.
+                    To ensure easy debugging, essentially any possible wire going to different parts of the board was given its own testpad to ensure easy debugging. This also included every ground trace to different components.
+                    <br>This paid off as compared to the other pair within our group working on the "wacky hat", who only used a few test pads.
+                    They found it a hassle to try and debug their board later and admitted that they should have done the same thing, despite it initially being a group joke during the process.
+                    </p>
                     <embed class="pdf" src="webpage images/university projects/PCB Schematic.pdf#view=FitH" alt="Schematic for PCB.">
                     <br>
                     <br>
-                    <p>This was then...</p>
+                    <p>The schematic for the PCB layout was then produced. While there is no right way to construct the PCB - just that the microcontroller and a few of the required components had specific spots for pasting later on.
+                    There are several aspects to try optimise. For example to reduce noise, any transitions between planes should be as close to the pins of the connecting devices.
+                    Sometimes this is not achieveable, so any high frequency signals need to have a higher priority for this instead. It is a very careful balancing act.
+                    </p>
                     <img src="webpage images/university projects/PCB Layout - partway.png" alt="Sample of some of the PCB construction.">
                     <br>
                     <br>
-                    <p>The final PCB which was then produced was...</p>
+                    <p>The final PCB that was produced had a lot of things shifted around to allow for as much flexibility as possible. This was in case we wanted to implement any "dastardly stuff" within the rules of the competition.
+                    While we didn't end up implementing any such things, it allowed for the maximum potential use of the board.
+                    </p>
                     <img src="webpage images/university projects/Final Racer PCB.png" alt="Final Racer PCB.">
+                    <p> Once the PCB was ordered and arrived, all of the components needed to be added to the board. This was done using a pick and place machine, and then soldered where required.
+                    </p>
+                    <p>There was one key issue with the board that required rework. The major one being that the nSleep pin of the PWM H-bridge for driving the motors was connected to ground.
+                    This was originally connected to the microcontroller, however we were advised on our initial submission of the board that we should instead be able to change whether power is supplied to the chip, and connect nSleep to ground.
+                    This mistake required lifting the nSleep leg off of the PCB, which caused it to break. We managed to somehow get around this by soldering a wire where the leg was, and by luck it managed to stay powered.
+                    This was up until the competition day, where when transitioning from a platform to a rotating plank, the racer fell off, and the solder broke off. It then refused to resolder to the chip.
+                    Overall this was a very fun project though even with it's challenges.
+                    </p>
                 </div>
             </div>
 
