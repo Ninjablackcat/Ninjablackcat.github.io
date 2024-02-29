@@ -2,7 +2,7 @@
 <html lang="en"> <!-- English website -->
     <head>
         <!-- External css link -->
-        <link rel="stylesheet" href="css styles/default.css">
+        <link rel="stylesheet" href="./css styles/default.css">
         <!-- Meta style -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -16,14 +16,24 @@
     <body>
 
         <!-- Navigation to other pages -->
-        <div id="navBar">
-            <a href="index.html" class="leftmost">Home</a>
-            <a href="university projects.html">University Projects</a>
-            <a href="personal projects.html" class="active">Personal Projects</a>
-            <a href="achievements.html">Achievements</a>
-            <a href="about.html">About</a>
-            <a href="contacts.html">Contacts</a>
-            <a href="svgCanvasTest.html">SVG Text Rain</a>
+        <div class="navBar">
+            <ul class="navBarItem">
+                <li class="navBarItem"><a href="./index.html" class="leftmost">Home</a></li>
+
+                <li class="navBarItem dropDownContainer">
+                    <a href="javascript:void(0)" class="dropList" id="UniProj">University Projects</a>
+                    <div class="dropDownList" ip="UniProjDDL">
+                        <a href="./university project webpages/elevatorPLC.html" class="listItem">PLC Elevator</a>
+                        <a href="./university project webpages/robocup.html" class="listItem">Robocup</a>
+                        <a href="./university project webpages/wackyRaces.html" class="listItem">Wacky Races</a>
+                    </div>
+                </li>
+                <li class="navBarItem"><a href="./personal projects.html" class="active">Personal Projects</a></li>
+                <li class="navBarItem"><a href="./achievements.html">Achievements</a></li>
+                <li class="navBarItem"><a href="./about.html">About</a></li>
+                <li class="navBarItem"><a href="./contacts.html">Contacts</a></li>
+                <li class="navBarItem"><a href="./svgCanvasTest.html">SVG Text Rain</a></li>
+            </ul>
         </div>
 
 
@@ -38,47 +48,53 @@
             <div class="edgeSpacer">
                 <div class="project">
                     <h2>Custom Desk</h2>
-                    <p>The first desk I had brought was reasonable for the price, but over time I found several hinderances.
-                    <br>The leg space available was fairly small preventing rotation.
-                    <br>While it did have a board across the back, it was still fairly wobbly.
-                    <br>With the weight of the television as a second monitor, and the support area of the legs, it could not be placed at the back of the desk without risk of tipping.
-                    <br>There was a lack of space for routing cables making it inconvienent for switching out devices.
+                    <p>
+                        The first desk I had brought was reasonable for the price, but over time I found several hinderances.
+                        <br>The leg space available was fairly small preventing rotation.
+                        <br>While it did have a board across the back, it was still fairly wobbly.
+                        <br>With the weight of the television as a second monitor, and the support area of the legs, it could not be placed at the back of the desk without risk of tipping.
+                        <br>There was a lack of space for routing cables making it inconvienent for switching out devices.
                     </p>
-                    <p>From this, I needed a desk which would solve these issues. Looking online, there were very few options within my budget. However I did have access to tools to construct my own desk from wood and metal.
-                    I measured out the maximum possible size for my desk. I then started researching available materials, and it came down to using SHS for the frame, a laminated pinewood sheet for the desktop, and plywood for the panels and storage.
-                    I then started using Solidworks to section out the frame.
-                    <br>The right side was for my pc, and the left side was for storage. This is due to the side panel of the desktop case having a glass side panel for showing components.
-                    <br>Measuring the desktop case height, and leaving space for ventilation, there was space above for connecting my peripherals and managing cables.
+                    <p>
+                        From this, I needed a desk which would solve these issues. Looking online, there were very few options within my budget. However I did have access to tools to construct my own desk from wood and metal.
+                        I measured out the maximum possible size for my desk. I then started researching available materials, and it came down to using SHS for the frame, a laminated pinewood sheet for the desktop, and plywood for the panels and storage.
+                        I then started using Solidworks to section out the frame.
+                        <br>The right side was for my pc, and the left side was for storage. This is due to the side panel of the desktop case having a glass side panel for showing components.
+                        <br>Measuring the desktop case height, and leaving space for ventilation, there was space above for connecting my peripherals and managing cables.
                     </p>
                     <img src="webpage images/personal projects/Desk initial shape.png" alt="Initial desk shape with SHS.">
                     <br>
                     <br>
-                    <p>There were some SHS sections that were varying in length for the same "role" as other parts.
-                    <br>The initial choice was to have the desktop hide the holes of the SHS, however I could use the plywood panels to hide these instead, and reduce the number of different length SHS
-                    <br>I also used angle bar for holding the shelves and section for cable management. This allowed the wood to sit in place without the use of bolts or other fixtures. The bar across the centre was to make the desk more robust. This would reduce the amount of excess steel from the lengths purchased after the table was constructed.
+                    <p>
+                        There were some SHS sections that were varying in length for the same "role" as other parts.
+                        <br>The initial choice was to have the desktop hide the holes of the SHS, however I could use the plywood panels to hide these instead, and reduce the number of different length SHS
+                        <br>I also used angle bar for holding the shelves and section for cable management. This allowed the wood to sit in place without the use of bolts or other fixtures. The bar across the centre was to make the desk more robust. This would reduce the amount of excess steel from the lengths purchased after the table was constructed.
                     </p>
                     <img src="webpage images/personal projects/Desk with shelves.png" alt="Improved SHS for easier fabrication, use of plywood shelves.">
                     <br>
                     <br>
-                    <p>Looking at shelves that could be purchased and then installed, there were few options without significantly reducing the amount of leg space available. A joke was made that I could put in a mini-fridge.
-                    <br>I quickly found a wine cooler that was small enough to fit into the space, and it was only $100. So I removed the bottom bar so it could easily slide into the space, and shrunk the rear lower shelves to accomdate, expanding the top shelf as it was no longer going to be used for draws.
-                    <br>This was the final design that was going to be constructed.
+                    <p>
+                        Looking at shelves that could be purchased and then installed, there were few options without significantly reducing the amount of leg space available. A joke was made that I could put in a mini-fridge.
+                        <br>I quickly found a wine cooler that was small enough to fit into the space, and it was only $100. So I removed the bottom bar so it could easily slide into the space, and shrunk the rear lower shelves to accomdate, expanding the top shelf as it was no longer going to be used for draws.
+                        <br>This was the final design that was going to be constructed.
                     </p>
                     <img src="webpage images/personal projects/Desk render with plywood.png" alt="Final render of desk.">
                     <br>
                     <br>
-                    <p> I then compiled all of the lengths of SHS, and dimensions of the plywood. This then took roughly 2 days to construct - between times that my neighbour's workshop was available.
-                    I purchased some spraypaints to coat the frame, and varnish to ensure that the desktop would last for some time.
-                    <br> The build below is without the plywood side panels, due to a lack of varnish, and they were finished at a later date.
+                    <p>
+                        I then compiled all of the lengths of SHS, and dimensions of the plywood. This then took roughly 2 days to construct - between times that my neighbour's workshop was available.
+                        I purchased some spraypaints to coat the frame, and varnish to ensure that the desktop would last for some time.
+                        <br> The build below is without the plywood side panels, due to a lack of varnish, and they were finished at a later date.
                     </p>
                     <img src="webpage images/personal projects/Completed desk.jpg" alt="Constructed desk." width="800">
                     <br>
                     <br>
-                    <p>If I were to construct another desk in the future - especially of this size, I would try to design it to be more modular.
-                    This could be achieved by sectioning the top and bottom of the frame to be single parts, with the vertical sections being independent and slotting into extrusions from the top and bottom frames.
-                    This would ensure that the structural benefits remain to reduce distortions from heavy loads on the desk.
-                    <br>This would make it significantly easier to transport if needed between locations, as well as move through doorways.
-                    It would also make it suitable for multi-story buildings as well.
+                    <p>
+                        If I were to construct another desk in the future - especially of this size, I would try to design it to be more modular.
+                        This could be achieved by sectioning the top and bottom of the frame to be single parts, with the vertical sections being independent and slotting into extrusions from the top and bottom frames.
+                        This would ensure that the structural benefits remain to reduce distortions from heavy loads on the desk.
+                        <br>This would make it significantly easier to transport if needed between locations, as well as move through doorways.
+                        It would also make it suitable for multi-story buildings as well.
 
                     </p>
                 </div>
@@ -88,222 +104,8 @@
 
 
 
-        <script>
-            //Credit: https://github.com/Rudxain/RGB-digital-rain?tab=readme-ov-file for inspiration,
-            //Credit: https://codepen.io/gnsp/pen/vYBQZJm for general method of implementation
-
-            var body = document.body,
-                html = document.documentElement; // Credit: https://stackoverflow.com/questions/1145850/how-to-get-height-of-entire-document-with-javascript for fixing size of svg
-            //Math.max(body.scrollWidth, body.offsetWidth, html.clientWidth, html.scrollWidth, html.offsetWidth);
-            //Get webpage size
-            var pageWidth = Math.max(body.scrollWidth, body.offsetWidth, html.clientWidth, html.scrollWidth, html.offsetWidth);
-            var pageHeight = html.clientHeight; //Is in absolute position, so just need the screen height.
-
-            //console.log(body.scrollHeight);
-            //console.log(body.offsetHeight)
-            //console.log(html.clientHeight)
-            //console.log(html.scrollHeight)
-            //console.log(html.offsetHeight)
-
-            //Parameters
-            const columnWidth = 40;
-            const fontSize = 16;
-            const fallSpeed = fontSize;
-
-            // Text Rain fall update| 100 - 300ms, in 25ms increments
-            //Performance issues can occur for this to go slower than intended!
-            const timeStepSizeMS = 25;
-            const textRainUpdateRangeMS = 200;
-            const textRainUpdateminMS = 100;
-            const trailMSIncrement = timeStepSizeMS;
-            const minTrail = 1;
-
-
-            //Initialisation
-            const columnCount = Math.floor(pageWidth / columnWidth) + 1; //Ensure at least two text columns...
-            var twoDTextRainArray = Array(columnCount);
-            var textRainLengthsArray = Array(columnCount); // Keeping track of array lengths for trails.
-
-            //Create svg canvas
-            var svgTextRain = document.createElementNS("http://www.w3.org/2000/svg", "svg",);
-            svgTextRain.classList.add("textRain") //Set to use external css
-
-            svgTextRain.setAttribute('width', pageWidth);
-            svgTextRain.setAttribute('height', pageHeight);
-            var svgTextRainNS = svgTextRain.namespaceURI;
-
-            //Black background
-            var rect = document.createElementNS(svgTextRainNS, 'rect');
-            rect.setAttribute('x', 0);
-            rect.setAttribute('y', 0);
-            rect.setAttribute('width', pageWidth);
-            rect.setAttribute('height', pageHeight);
-            rect.setAttribute('fill', '#000000');
-
-            svgTextRain.appendChild(rect);
-            document.body.appendChild(svgTextRain);
-
-
-
-            //Initialise the text rain leaders
-            var index = 0
-
-            for (index; index < columnCount; index++) {
-                //Get leader attributes to determine trail length
-                //Set fall update time (ms)
-                var fallUpdateMs = Math.round((Math.random() * textRainUpdateRangeMS / timeStepSizeMS)) * timeStepSizeMS + textRainUpdateminMS;
-                //console.log(fallUpdateMs)
-
-                //Create array based on fall speed.
-                var trailLength = Math.floor(((textRainUpdateRangeMS + textRainUpdateminMS) - fallUpdateMs) / trailMSIncrement) + minTrail;
-                //console.log(trailLength)
-
-                textRainLengthsArray[index] = trailLength + 1; // Trail plus leader
-                twoDTextRainArray[index] = Array(trailLength + 1);
-
-                //Generate leader.
-                //Create object
-                twoDTextRainArray[index][0] = document.createElementNS(svgTextRainNS, 'text');
-                //Assign object parameters
-                //Initial Position
-                twoDTextRainArray[index][0].setAttribute('x', (columnWidth * index) - columnWidth / 16);
-                twoDTextRainArray[index][0].setAttribute('y', Math.floor(Math.random() * -pageHeight * 2));
-                //twoDTextRainArray[index][0].setAttribute('y', 200); //Testing
-
-                //Font details
-                twoDTextRainArray[index][0].setAttribute('fill', '#ffffff');
-                //twoDTextRainArray[index].setAttribute('stroke', '#ffffff'); //Makes them bold
-                twoDTextRainArray[index][0].setAttribute('font-size', fontSize.toString());
-                //Contents - randomised
-                twoDTextRainArray[index][0].textContent = String.fromCharCode(Math.floor(Math.random() * 93) + 1);
-                //Assign fall attribute.
-                twoDTextRainArray[index][0].setAttribute('fallUpdateMS', fallUpdateMs);
-                twoDTextRainArray[index][0].setAttribute('idleTimeMS', 0);
-
-                //Generate trails
-                var trailIndex = 1;
-                for (trailIndex; trailIndex < textRainLengthsArray[index]; trailIndex++) {
-                    //Generate trail text element
-                    twoDTextRainArray[index][trailIndex] = document.createElementNS(svgTextRainNS, 'text');
-                    //Set attributes similar to leader...
-                    var trailX = twoDTextRainArray[index][0].getAttribute('x') * 1;
-                    var trailY = twoDTextRainArray[index][0].getAttribute('y') * 1 - (trailIndex * fallSpeed);
-
-                    twoDTextRainArray[index][trailIndex].setAttribute('x', trailX);
-                    twoDTextRainArray[index][trailIndex].setAttribute('y', trailY);
-                    //Font details
-                    twoDTextRainArray[index][trailIndex].setAttribute('fill', '#ffffff');
-                    //twoDTextRainArray[index][trailIndex].setAttribute('stroke', '#ffffff'); //Makes them bold
-                    twoDTextRainArray[index][trailIndex].setAttribute('font-size', fontSize.toString());
-                    var textOpacity = (textRainLengthsArray[index] - trailIndex) / textRainLengthsArray[index]
-                    twoDTextRainArray[index][trailIndex].setAttribute('fill-opacity', textOpacity.toString());
-                    //twoDTextRainArray[index][trailIndex].setAttribute('stroke-opacity', textOpacity.toString()); //Fades outline
-                    //Contents - randomised, not same as leader!
-                    twoDTextRainArray[index][trailIndex].textContent = String.fromCharCode(Math.floor(Math.random() * 93) + 1);
-
-                    //Will update position based on text ahead - done based on order within function!
-                    //twoDTextRainArray[index][trailIndex].setAttribute('nextY', twoDTextRainArray[index][trailIndex-1].getAttribute('y')); // Redundant for now...
-                    //console.log(index + " | " + trailIndex);
-                }
-            }
-            //console.log(twoDTextRainArray);
-            //Put text elements onto canvas
-            updateCanvas(); //Thought that canvas had to be redrawn from scratch every time. This is not the case!
-
-            //Functions
-
-            //Iterate through time for leaders.
-            function timeStep() {
-                var index = 0
-                //console.log(columnCount);
-                //Update leader time passed
-                for (index; index < columnCount; index++) {
-                    //If time to shift text down, reset idle time, otherwise increase idle time
-                    var textTimeIdle = twoDTextRainArray[index][0].getAttribute('idleTimeMS') * 1 + timeStepSizeMS;
-                    var textUpdateTime = twoDTextRainArray[index][0].getAttribute('fallUpdateMS') * 1;
-                    //console.log(index);
-                    if (textTimeIdle >= textUpdateTime) {
-                        //Reset idle time, move text & trail down.
-                        twoDTextRainArray[index][0].setAttribute('idleTimeMS', 0);
-                        textRainShift(index, textRainLengthsArray[index]);
-                        //console.log(index);
-                    } else {
-                        //Increment idle time
-                        twoDTextRainArray[index][0].setAttribute('idleTimeMS', textTimeIdle);
-                    }
-
-                }
-
-
-            }
-
-            function textRainShift(columnIndex, trailLength) {
-                //Start from end of trail, and work towards leader.
-                //console.log(columnIndex + " | " + trailLength);
-                for (index = trailLength - 1; index > 0; index--) {
-                    //Update position for trail element
-                    var textAheadPos = twoDTextRainArray[columnIndex][index - 1].getAttribute('y') * 1;
-                    twoDTextRainArray[columnIndex][index].setAttribute('y', textAheadPos);
-                    //Update character - random
-                    twoDTextRainArray[columnIndex][index].textContent = String.fromCharCode(Math.floor(Math.random() * 93) + 1);
-                }
-
-                //Have leader fall.
-                //Update character - random
-                twoDTextRainArray[columnIndex][0].textContent = String.fromCharCode(Math.floor(Math.random() * 93) + 1);
-                //Update y position
-                var nextLeaderYPos = twoDTextRainArray[columnIndex][0].getAttribute('y') * 1 + fallSpeed;
-
-                //Determine whether to continue falling or restart.
-                if ((nextLeaderYPos > (pageHeight * 5) / 6 && Math.random() > 0.9) || nextLeaderYPos > pageHeight) {
-                    //Return to top of screen
-                    twoDTextRainArray[columnIndex][0].setAttribute('y', Math.floor(Math.random() * -pageHeight));
-                } else {
-                    //Continue to fall
-                    twoDTextRainArray[columnIndex][0].setAttribute('y', nextLeaderYPos);
-                }
-
-
-            }
-
-            function updateCanvas() {
-                //Background
-                //svgTextRain.appendChild(rect);
-                //Text characters
-                var columnIndex = 0;
-
-                for (columnIndex; columnIndex < columnCount; columnIndex++) {
-                    //console.log(columnCount);
-                    var trailIndex = 0
-                    for (trailIndex; trailIndex < textRainLengthsArray[columnIndex]; trailIndex++) {
-                        //Put text characters onto canvas
-                        svgTextRain.appendChild(twoDTextRainArray[columnIndex][trailIndex]);
-                        //console.log(columnIndex + " | " + trailIndex);
-                    }
-
-                }
-
-                //Place onto webpage
-                document.body.appendChild(svgTextRain);
-            }
-
-
-            //Bug testing function...
-            function checkYPos() {
-                for (leaderIndex = 0; leaderIndex < columnCount; leaderIndex++) {
-                    console.log("Index " + leaderIndex + ", yPos:" + twoDTextRainArray[leaderIndex][0].getAttribute('y'))
-                }
-
-            }
-
-
-            //How often the rain will update (ms)
-            setInterval(timeStep, timeStepSizeMS);
-
-            //setInterval(checkYPos, 10000);
-
-
-        </script>
+        <!-- Background -->
+        <script src="./textRain.js"></script>
 
     </body>
 </html>

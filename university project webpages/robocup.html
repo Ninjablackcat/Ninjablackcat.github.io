@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- English website -->
+<head>
+    <!-- External css link -->
+    <link rel="stylesheet" href="../css styles/default.css">
+    <!-- Meta style -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Webpage title -->
+    <title>NBC's Website | University Projects</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="webpage images/favicon16.ico" sizes="16x16" type="image/x-icon">
+
+    <link rel="icon" href="webpage images/favicon16.ico" sizes="16x16" type="image/x-icon">
+
+</head>
+<body>
+
+    <!-- Navigation to other pages -->
+    <div class="navBar">
+        <ul class="navBarItem">
+            <li class="navBarItem"><a href="../index.html" class="leftmost">Home</a></li>
+
+            <li class="navBarItem dropDownContainer">
+                <a href="javascript:void(0)" class="active dropList">University Projects</a>
+                <div class="dropDownList">
+                    <a href="./elevatorPLC.html" class="listItem">PLC Elevator</a>
+                    <a href="./robocup.html" class="active listItem">Robocup</a>
+                    <a href="./wackyRaces.html" class="listItem">Wacky Races</a>
+                </div>
+            </li>
+            <li class="navBarItem"><a href="../personal projects.html">Personal Projects</a></li>
+            <li class="navBarItem"><a href="../achievements.html">Achievements</a></li>
+            <li class="navBarItem"><a href="../about.html">About</a></li>
+            <li class="navBarItem"><a href="../contacts.html">Contacts</a></li>
+            <li class="navBarItem"><a href="../svgCanvasTest.html">SVG Text Rain</a></li>
+        </ul>
+    </div>
+
+
+    <!-- Contents -->
+    <div id="title">
+        <div class="edgeSpacer">
+            <h1>University Projects</h1>
+        </div>
+    </div>
+
+    <div id="primeContent">
+        <div class="edgeSpacer">
+           
+            <div class="project">
+                <h2>Robocup</h2>
+                <p>
+                    My primary objective for the robot was developing the navigation method for the robot. The robot would navigate around an arena with walls as obstacles, and metal weights as "points" to be collected.
+                    <br>An ultrasonic sensor array was used to collect the data, as they had sufficient range to see obstacles ahead, and were more accurate than the IR sensors available - which had even longer range.
+                    <br>At the time I was intending to essentually build a map of the arena while collecting data points. Thus observing to the other side of the arena would be redundant, especially with the opponents robot also in the arena.
+                    <br>
+                </p>
+                <img src="../webpage images/university projects/Robocup sensor array.jpg" alt="Ultrasonic sensor array, rotated by servos." width="800">
+                <br>
+                <br>
+                <p>
+                    One main challenge was that the supplied code for the ultrasonic sensors was "blocking" - that is, the microcontroller could not do any tasks until the ultrasonic sensor would return a response.
+                    <br>Given that the sensors had a maximum range of 4m - resulting in a total travel distance of 8 meters for the signal - each measurement could take up to 23ms.
+                    <br>While most of the obstacles are fairly large, one could do significantly larger changes in angle with the servos when rotating the sensor arrays.
+
+                    <br>I was not aware of any methods such as a grid map at the time, so I was limiting the amount of data points collected to 2000.
+                    <br>Then using a circular buffer to overwrite old data points. This ensured that the amount of time to process the data for the robot's direction of travel would not impact it's performance.
+
+                </p>
+                <p>
+                    Visualised in Processing, as Arduino didn't have a method to plot x,y data. This required using serial communication from the microcontroller to the desktop.
+                    <br>Method for detecting weights was based on comparing a group of points collected by the bottom-most sensor.
+                    <br>If the points collected were consistent for the appearance of a weight, then it would be indicated by a yellow square.
+                    <br>Obstacles were detected based on both sensors measuring the same output, and indicated by a red dot.
+                    <br>Robot forward direction indicated by the blue line from the white dot.
+                </p>
+                <img src="../webpage images/university projects/Robocup visualising data with robot direction.jpg" alt="Plot of data indicating obstacles (red) and targets (yellow) and robot (white/blue)." width="400">
+            </div>
+            
+        </div>
+
+    </div>
+
+    <!-- Background -->
+    <script src="../textRain.js"></script>
+
+</body>
+</html>

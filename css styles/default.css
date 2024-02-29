@@ -7,12 +7,12 @@ body {
 
 
 /* Text Style */
-h1, h2, h3, h4, h5, h6, p, sub, sup, em, i, b, small, strong, ins, del, mark, pre, a{
+h1, h2, h3, h4, h5, h6, p, sub, sup, em, i, b, small, strong, ins, del, mark, pre, a, label, span, li{
     color: rgba(255, 255, 255, 1);
-    font-family:monospace;
+    font-family: monospace;
 }
 
-p, em, i, b, strong, ins, del, mark, pre, a {
+p, em, i, b, strong, ins, del, mark, pre, a, span, li{
     font-size:16px;
 }
 
@@ -30,9 +30,8 @@ sub.shiftSub{
 }
 
 /*Navigation bar*/
-
-#navBar {
-    z-index: 10; /* Ensure that other elements are not above this!*/
+div.navBar {
+    z-index: 10; /* Ensure that other elements are not above this! */
     overflow: hidden;
     padding-top: 5px;
     margin-top: 0px;
@@ -40,54 +39,82 @@ sub.shiftSub{
     position: sticky;
     top: 0;
     background-color: rgba(16, 16, 16, 1);
+    width: 100%;
+    display: block;
 }
 
-#navBar a {
-    /*Would do format of 'padding: 15px, 20px' but not working...*/
-    margin-top:10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 20px;
-    padding-right:20px;
-    
-    border-radius:10px 10px 0 0;
+ul.navBarItem {
+    /* Remove any style from use of list such as bullet points etc */
+    list-style-type: none;
+}
 
+li.navBarItem {
+    /* Navbar List Style */
+    float: left;
+    list-style-type: none;
+}
+
+li.navBarItem a, .dropList {
+    /* Link box style */
     display: inline-block;
+    padding: 5px 20px;
     background-color: rgba(128, 128, 128, 1);
-
-    text-align:center;
     text-decoration: none;
+    margin: 0px 5px;
+    border-radius: 10px 10px 0 0;
 }
 
-#navBar a:hover {
-    color: rgba(196, 196, 196, 1);
-    background-color: rgba(96, 96, 96, 1);
-    margin-top:0px;
-    padding-bottom:20px;
-    position:relative;
-    display:inline;
-    top:-10px;
+
+/* Drop down boxes */
+li.navBarItem div.dropDownList {
+    margin: 0px 5px;
+    display: none;
+    position: fixed;
+    background-color: rgba(128, 128, 128, 1);
     
 }
 
-#navBar a.active {
+li.dropDownContainer:hover .dropDownList {
+    display: block;
+    width: 206px; /* Makes it fit nicely under the tab */
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.4);
+    z-index: 10;
+}
+
+li.dropDownContainer div.dropDownList a.listItem {
+    border-radius: 0px;
+    width: 166px; /* Makes it fit nicely under the tab, and within the drop box */
+    margin: 0;
+}
+
+/* Hover */
+
+li.navBarItem a:hover {
+    background-color: rgba(96, 96, 96, 1);
+}
+
+
+li.navBarItem a.active {
+    /* Active Link Style */
     background-color: rgba(38, 128, 0, 1);
 }
 
-#navBar a.leftmost{
-    margin-left:2%;
+li.navBarItem a.leftmost {
+    margin-left: 2%;
 }
 
-#navBar a:link {
+/* Remove any style from visited links etc*/
+li.navBarItem a:link {
     color: rgba(255, 255, 255, 1);
 }
 
-#navBar a:visited {
+li.navBarItem a:visited {
     color: rgba(255, 255, 255, 1);
 }
+
+
 
 /* Body layout */
-
 #title {
     background-color: rgba(38, 128, 0, 1);
     
