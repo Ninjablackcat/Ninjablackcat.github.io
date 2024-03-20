@@ -1,14 +1,30 @@
 /* Default style*/
 
+/*Variables*/
+:root {
+    /*Content*/
+    --defaultFontColor: rgba(255, 255, 255, 1);
+    --bodyBackground: rgba(0, 0, 0, 1);
+    --contentBackground: rgba(33, 33, 33, 1);
+    /*Navigation Bar*/
+    --NavBarBackground: rgba(16, 16, 16, 1);
+    --NavBarBoxes: rgba(128, 128, 128, 1);
+    --NavBarBoxesHover: rgba(96, 96, 96, 1);
+    --NavBarBoxesActive: rgba(38, 128, 0, 1);
+    --NavBarDropBoxShadow: rgba(0, 0, 0, 0.4);
+    /*Header*/
+    --HeaderBackground: rgba(38, 128, 0, 1);
+}
+
 body {
     margin:0;
-    background-color: rgba(0, 0, 0, 1);
+    background-color: var(--bodyBackground);
 }
 
 
 /* Text Style */
-h1, h2, h3, h4, h5, h6, p, sub, sup, em, i, b, small, strong, ins, del, mark, pre, a, label, span, li{
-    color: rgba(255, 255, 255, 1);
+h1, h2, h3, h4, h5, h6, p, sub, sup, em, i, b, small, strong, ins, del, mark, pre, a, label, span, li {
+    color: var(--defaultFontColor);
     font-family: monospace;
 }
 
@@ -38,7 +54,7 @@ div.navBar {
     padding-bottom: 0px;
     position: sticky;
     top: 0;
-    background-color: rgba(16, 16, 16, 1);
+    background-color: var(--NavBarBackground);
     width: 100%;
     display: block;
 }
@@ -58,7 +74,7 @@ li.navBarItem a, .dropList {
     /* Link box style */
     display: inline-block;
     padding: 5px 20px;
-    background-color: rgba(128, 128, 128, 1);
+    background-color: var(--NavBarBoxes);
     text-decoration: none;
     margin: 0px 5px;
     border-radius: 10px 10px 0 0;
@@ -70,14 +86,14 @@ li.navBarItem div.dropDownList {
     margin: 0px 5px;
     display: none;
     position: fixed;
-    background-color: rgba(128, 128, 128, 1);
+    background-color: var(--NavBarBoxes);
     
 }
 
 li.dropDownContainer:hover .dropDownList {
     display: block;
     width: 206px; /* Makes it fit nicely under the tab */
-    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 5px 10px 0px var(--NavBarDropBoxShadow);
     z-index: 10;
 }
 
@@ -90,13 +106,13 @@ li.dropDownContainer div.dropDownList a.listItem {
 /* Hover */
 
 li.navBarItem a:hover {
-    background-color: rgba(96, 96, 96, 1);
+    background-color: var(--NavBarBoxesHover);
 }
 
 
 li.navBarItem a.active {
     /* Active Link Style */
-    background-color: rgba(38, 128, 0, 1);
+    background-color: var(--NavBarBoxesActive);
 }
 
 li.navBarItem a.leftmost {
@@ -105,26 +121,25 @@ li.navBarItem a.leftmost {
 
 /* Remove any style from visited links etc*/
 li.navBarItem a:link {
-    color: rgba(255, 255, 255, 1);
+    color: var(--defaultFontColor);
 }
 
 li.navBarItem a:visited {
-    color: rgba(255, 255, 255, 1);
+    color: var(--defaultFontColor);
 }
 
 
 
 /* Body layout */
 #title {
-    background-color: rgba(38, 128, 0, 1);
-    
+    background-color: var(--HeaderBackground);
     padding: 10px 12%;
 }
 
-#primeContent{
+#primeContent {
     /*Filler*/
     margin: 0px 12%;
-    background-color: rgba(33, 33, 33, 1);
+    background-color: var(--contentBackground);
     padding: 10px 0px;
 }
 
@@ -156,4 +171,13 @@ svg.textRain {
     top: 0;
     left: 0;
     z-index: -10;
+}
+
+/*Resize webpage elements based on viewport size*/
+
+@media screen and (max-width:1100px) {
+    /*Change navigation bar style*/
+    li.navBarItem a, .dropList {
+        border-radius: 0 0 0 0;
+    }
 }
