@@ -147,12 +147,20 @@ div.edgeSpacer{
     padding: 0px 20px;
 }
 
-/* Embedded PDF */
+/* Embedded PDF default */
 
 embed.pdf {
-    width:80%;
+    position: relative;
+    left: 2%;
+    width:96%;
     max-width: 1800px;
     height: 900px;
+}
+
+/* PDF download links */
+
+a.pdfLink {
+    display: none;
 }
 
 /* Images */
@@ -179,5 +187,15 @@ svg.textRain {
     /*Change navigation bar style*/
     li.navBarItem a, .dropList {
         border-radius: 0 0 0 0;
+    }
+}
+
+@media screen and (max-width:1650px) {
+    /*Show/hide PDFs*/
+    embed.pdf {
+        display: none;
+    }
+    a.pdfLink {
+        display: block;
     }
 }
